@@ -1,0 +1,81 @@
+.detailsContainer{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 65rem;
+    display: flex;
+    gap: 1.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 1rem #ccc;
+}
+.image img{
+    width: 35rem; height: 100%;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+.priceTitle{
+    color: #999;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btns a {
+    text-decoration: none;
+    color: #16246d;
+}
+.btns button{
+    padding: 0.5rem;
+    border: none;
+    background-color: #16246d;
+    color: #fff;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+.btnsGroup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.btnsGroup .plus, .btnsGroup .minus{
+    padding: 0.5rem;
+    font-size: 0.95rem;
+}
+
+@media screen and (max-width: 1100px) {
+    .container{
+        width: 80%;
+        font-size: 0.9rem;
+    }
+    .image img{
+        width: 25rem;
+    }
+}
+@media screen and (max-width: 900px) {
+    .container{
+        font-size: 0.8rem;
+    }
+    .image img{
+        width: 17rem;
+    }
+    
+}
+@media screen and (max-width: 650px) {
+    .container{
+        flex-direction: column;
+    }
+    .image img{
+        width: 100%;
+    }
+    
+}
