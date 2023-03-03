@@ -1,17 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Route, Routes } from 'react-router-dom';
 import { ProductsContext } from '../context/ProductContext';
-import { getAllProducts, getSomeProducts } from '../services/api';
 import Loading from '../shared/Loading';
-import NavBar from '../shared/NavBar';
 import Product from '../shared/Product';
 
 import styles from '../Styles/Store.module.css'
-import Cart from './Cart';
 
 const Store = () => {
-    const {pagination, someData, setPage} = useContext(ProductsContext);
-    
+    const { pagination, someData, setPage, page } = useContext(ProductsContext);
+
 
     const pageHandler = event => {
         setPage(event.target.innerHTML)
@@ -27,7 +23,27 @@ const Store = () => {
                             {someData.map(prod => <Product data={prod} key={prod.id} />)}
                         </div>
                         <div className={styles.numContainer}>
-                            {pagination.map(num => <div onClick={pageHandler} className={styles.num} key={num}>{num}</div>)}
+                            <button onClick={() => {
+                                setPage(pervState => {
+                                    if ( pervState - 1 >= 1) {
+                                        return pervState - 1
+                                    }
+                                    else{
+                                        return pervState
+                                    }
+                                })
+                            }} className={styles.arrow}> {"<"} </button>
+                            {pagination.map(num => <div onClick={pageHandler} className={styles.num} style={page == num ? { backgroundColor: "#16246d", color: "#fff" } : { backgroundColor: "#fff", color: "#16246d" }} key={num}>{num}</div>)}
+                            <button onClick={() => {
+                                setPage(pervState => {
+                                    if (pervState + 1 <= pagination.length) {
+                                        return pervState + 1
+                                    }
+                                    else{
+                                        return pervState
+                                    }
+                                })
+                            }} className={styles.arrow}> {">"} </button>
                         </div>
                     </>
             }

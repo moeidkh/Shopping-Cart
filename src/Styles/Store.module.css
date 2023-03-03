@@ -12,15 +12,35 @@
     position: fixed;
     bottom: 0;
     display: flex;
-    gap: 0.65rem;
+    gap: 0.35rem;
     justify-content: center;
     align-items: center;
     padding-bottom: 0.5rem;
 }
 .num{
-    padding: 0.35rem;
-    background-color: #16246d;
-    border-radius: 0.35rem;
+    width: 1.5rem; height: 1.5rem;
     color: #fff;
+    background-color: #16246d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     cursor: pointer;
+}
+.arrow{
+    background-color: transparent;
+    width: 1.5rem; height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    font-weight: bolder;
+}
+@media screen and (max-width: 400px) {
+    .numContainer{
+        padding: 0 0.5rem;
+        font-size: 0.8rem;
+    }
 }

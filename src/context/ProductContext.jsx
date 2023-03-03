@@ -9,6 +9,7 @@ const ProductContext = ({children}) => {
     const [allData, setAllData] = useState([]);
     const [someData, setSomeData] = useState([]);
     const [pagination, setPagination ] = useState([])
+    // const [active, setActive] = useState(1)
     const [page , setPage] = useState(1);
     useEffect(() => {
         const temp = []
@@ -33,7 +34,7 @@ const ProductContext = ({children}) => {
     }, [page])
 
     return (
-        <ProductsContext.Provider value={{pagination, someData, setPage}}>
+        <ProductsContext.Provider value={{pagination, someData, setPage, page}}>
             {children}
         </ProductsContext.Provider>
     );
