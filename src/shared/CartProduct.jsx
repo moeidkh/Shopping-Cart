@@ -9,7 +9,7 @@ const CartProduct = ({ data, dispatch, state }) => {
     return (
         <div className={styles.cartContainer}>
             <div className={styles.imageBox}>
-                <img className={styles.cartImage} src={data.images[0]} alt="" />
+                <img className={styles.cartImage} src={data.images[0]} alt="image" loading='lazy'/>
             </div>
             {/* <div className={styles.textBox}> */}
             <div className={styles.textContainer}>
