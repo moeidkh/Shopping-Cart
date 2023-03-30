@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsTrash } from 'react-icons/bs';
 import { quantityCount } from '../Helper/function';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 import styles from '../Styles/CartProducts.module.css'
 
@@ -10,12 +10,7 @@ const CartProduct = ({ data, dispatch, state }) => {
     return (
         <div className={styles.cartContainer}>
             <div className={styles.imageBox}>
-                {/* <img className={styles.cartImage} src={data.images[0]} alt="image" loading='lazy'/> */}
-                <LazyLoadImage 
-                    src={data.image[0]}
-                    alt="image"
-                    className={styles.cartImage}
-                />
+                <img className={styles.cartImage} src={data.images[0]} alt="image" loading='lazy'/>
             </div>
             {/* <div className={styles.textBox}> */}
             <div className={styles.textContainer}>
